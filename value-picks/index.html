@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Start light on snacks | airfare</title>
+<style>
+  :root{
+    --green:#256e57; --green-dark:#1e5a47; --green-tint:#eef5f1;
+    --sage:#a8c5bc; --mint:#d3f7d3; --cream:#f9f8f5;
+    --ink:#0f1724; --muted:#6b7280; --line:#e7e4dc;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",ui-sans-serif,system-ui,sans-serif;
+    background:var(--cream); color:var(--ink); line-height:1.55;
+    background-image:radial-gradient(1200px 500px at 50% -8%, #ecf5f0 0%, rgba(236,245,240,0) 60%);
+  }
+  .wrap{max-width:1080px;margin:0 auto;padding:40px 22px 64px}
+  .brand{display:flex;align-items:center;gap:7px;margin-bottom:34px}
+  .brand b{font-size:21px;font-weight:800;letter-spacing:-.02em;color:var(--green)}
+  .brand svg{color:var(--green)}
+  .hero{max-width:680px}
+  .eyebrow{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--green);background:var(--green-tint);
+    border-radius:999px;padding:6px 13px;margin-bottom:18px}
+  h1{font-size:34px;line-height:1.12;letter-spacing:-.02em;margin-bottom:16px}
+  .lead{color:var(--muted);font-size:17px;margin-bottom:10px}
+  .lead b{color:var(--ink)}
+  /* value menu */
+  .menu-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:12px;
+    margin:44px 0 6px}
+  .menu-head h2{font-size:22px;letter-spacing:-.01em}
+  .avg-badge{background:var(--mint);color:var(--green-dark);font-weight:700;font-size:13px;
+    border-radius:999px;padding:5px 12px}
+  .menu-sub{color:var(--muted);font-size:14.5px;margin-bottom:22px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(184px,1fr));gap:16px}
+  .snack{display:flex;flex-direction:column;text-decoration:none;color:inherit;
+    background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;
+    transition:transform .12s ease,box-shadow .12s ease}
+  .snack:hover{transform:translateY(-3px);box-shadow:0 16px 34px -22px rgba(15,23,36,.4)}
+  .thumb{aspect-ratio:1/1;background:#f4f2ec;display:flex;align-items:center;justify-content:center;padding:12px}
+  .thumb img{max-width:100%;max-height:100%;object-fit:contain}
+  .snack-body{padding:12px 14px 14px;display:flex;flex-direction:column;gap:3px}
+  .snack-name{font-size:14px;font-weight:650;line-height:1.25}
+  .snack-brand{font-size:12px;color:var(--muted)}
+  .snack-price{margin-top:4px;font-size:15px;font-weight:800;color:var(--green)}
+  /* starter bundle callout */
+  .bundle{margin-top:48px;background:#fff;border:1px solid var(--line);border-radius:22px;
+    padding:30px 30px;display:flex;flex-wrap:wrap;gap:26px;align-items:center;justify-content:space-between;
+    box-shadow:0 20px 50px -34px rgba(15,23,36,.3)}
+  .bundle-copy{flex:1 1 340px}
+  .bundle-copy h3{font-size:20px;letter-spacing:-.01em;margin-bottom:8px}
+  .bundle-copy p{color:var(--muted);font-size:14.5px}
+  .bundle-price{text-align:center;flex:0 0 auto}
+  .was{color:var(--muted);text-decoration:line-through;font-size:16px;margin-bottom:10px}
+  .tier{display:flex;align-items:baseline;justify-content:flex-end;gap:10px}
+  .tier + .tier{margin-top:4px}
+  .tier-label{font-size:12.5px;color:var(--muted);font-weight:600}
+  .now{font-size:32px;font-weight:800;letter-spacing:-.02em;color:var(--green);line-height:1.1}
+  .now.sub{color:var(--green-dark)}
+  .save-pill{display:inline-block;background:var(--mint);color:var(--green-dark);font-weight:700;
+    font-size:11.5px;border-radius:999px;padding:3px 9px;margin-left:6px;vertical-align:middle}
+  .per{color:var(--muted);font-size:12.5px;margin-top:8px}
+  .cta-row{margin-top:40px;display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+  .btn{display:inline-block;background:var(--green);color:#fff;text-decoration:none;font-weight:700;
+    font-size:16px;padding:15px 30px;border-radius:999px;transition:transform .12s,background .12s}
+  .btn:hover{background:var(--green-dark);transform:translateY(-1px)}
+  .btn-ghost{background:transparent;color:var(--green);border:1.5px solid var(--sage)}
+  .btn-ghost:hover{background:var(--green-tint);color:var(--green-dark)}
+  .note{margin-top:22px;color:var(--muted);font-size:13.5px}
+  .footer{margin-top:40px;padding-top:22px;border-top:1px solid var(--line);
+    font-size:13px;color:var(--muted)}
+  @media(max-width:560px){h1{font-size:28px} .bundle{padding:24px}}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="brand">
+      <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg>
+      <b>airfare</b>
+    </div>
+
+    <div class="hero">
+      <span class="eyebrow">Let's start light</span>
+      <h1>Great taste starts small.</h1>
+      <p class="lead">A full snack program might not be the move right now, and that is completely fine. Plenty of offices start with a handful of our most affordable picks and grow from there.</p>
+      <p class="lead">Here are <b>18 of our lowest priced snacks</b>, the same real food, plant based stuff, just an easy place to begin.</p>
+    </div>
+
+    <div class="menu-head">
+      <h2>The value picks</h2>
+      <span class="avg-badge">Averages $2.45 a snack</span>
+    </div>
+    <p class="menu-sub">Lots of variety, most under $2.50. Tap any snack to see it on the marketplace.</p>
+
+    <div class="grid">
+      <a class="snack" href="https://airfaresnacks.com/products/mini-figs-1" target="_blank" rel="noopener">
+        <div class="thumb"><img loading="lazy" src="https://cdn.shopify.com/s/files/1/0208/7161/0468/files/aUN0knNYClf9oYAB_fruitblissminifigs1.png?v=1774835604" alt="Mini Figs"></div>
+        <div class="snack-body">
+          <span class="snack-name">Mini Figs</span>
+          <span class="snack-brand">Fruit Bliss</span>
+          <span class="snack-price">$2.03</span>
+        </div>
+      </a>
+      <a class="snack" href="https://airfaresnacks.com/products/dry-roasted-edamame-1" target="_blank" rel="noopener">
+        <div class="thumb"><img loading="lazy" src="https://cdn.shopify.com/s/files/1/0208/7161/0468/files/Edemane.png?v=1774835579" alt="Dry Roasted Edamame"></div>
+        <div class="snack-body">
+          <span class="snack-name">Dry Roasted Edamame</span>
+          <span class="snack-brand">Seapoint Farms</span>
+          <span class="snack-price">$2.13</span>
+        </div>
+      </a>
+      <a class="snack" href="https://airfaresnacks.com/products/no-shell-pistachios-1" target="_blank" rel="noopener">
+        <div class="thumb"><img loading="lazy" src="https://cdn.shopify.com/s/files/1/0208/7161/0468/files/59771c07-2496-4d7b-b4db-63ae4893bde1_wonderful_pistachios.png?v=1774835598" alt="No-Shell Pistachios"></div>
+        <div class="snack-body">
+          <span class="snack-name">No-Shell Pistachios</span>
+          <span class="snack-brand">The Wonderful Company</span>
+          <span class="snack-price">$2.13</span>
+        </div>
+      </a>
+      <a class="snack" href="https://airfaresnacks.com/products/salt-pepper-roasted-lentils-2" target="_blank" rel="noopener">
+        <div class="thumb"><img loading="lazy" src="https://cdn.shopify.com/s/files/1/0208/7161/0468/files/Z9ukqjiBA97GisG6_nutruitsaltandpepperroastedlentils_b60ee967-9129-418f-b013-40a75193d7b1.png?v=1774835539" alt="Salt &amp; Pepper Roasted Lentils"></div>
+        <div class="snack-body">
+          <span class="snack-name">Salt &amp; Pepper Roasted Lentils</span>
+          <span class="snack-brand">nutruit</span>
+          <span class="snack-price">$2.13</span>
+        </div>
+      </a>
+      <a class="snack" href="https://airfaresnacks.com/products/salt-and-pepper-caulipuffs" target="_blank" rel="noopener">
+        <div class="thumb"><img loading="lazy" src="https://cdn.shopify.com/s/files/1/0208/7161/0468/files/saltandpeppercaulipuffs.png?v=1774841064" alt="Salt &amp; Pepper CauliPuffs"></div>
+        <div class="snack-body">
+          <span class="snack-name">Salt &amp; Pepper CauliPuffs</span>
+          <span class="snack-brand">FamBam Foods</span>
+          <span class="snack-price">$2.26</span>
+        </div>
+      </a>
+      <a class="snack" href="https://airfaresnacks.com/products/basil-thyme-marinated-artichokes" target="_blank" rel="noopener">
+        <div class="thumb"><img loading="lazy" src="https://cdn.shopify.com/s/files/1/0208/7161/0468/files/poshibasilandthymemarinatedartichokes.png?v=1779735495" alt="Basil &amp; Thyme Marinated Artichokes"></div>
+        <div class="snack-body">
+          <span class="snack-name">Basil &amp; Thyme Marinated Artichokes</span>
+          <span class="snack-brand">Poshi</span>
+          <span class="snack-price">$2.38</span>
+        </div>
+      </a>
+      <a class="snack" href="https://airfaresnacks.com/products/smoke-shack-crunchy-yellow-peas" target="_blank" rel="noopener">
+        <div class="thumb"><img loading="lazy" src="https://cdn.shopify.com/s/files/1/0208/7161/0468/files/northriverdrygoodssmokeshackyellowpeas_85171e16-f5f0-4d4c-be94-b1c48e34de36.png?v=1774835701" alt="Smoke Shack Crunchy Yellow Peas"></div>
+        <div class="snack-body">
+          <span class="snack-name">Smoke Shack Crunchy Yellow Peas</span>
+          <span class="snack-brand">North River Dry Goods</span>
+          <span class="snack-price">$2.40</span>
+        </div>
+      </a>
+      <a class="snack" href="https://airfaresnacks.com/products/yubi-cookies-and-cream-protein-bar" target="_blank" rel="noopener">
+        <div class="thumb"><img loading="lazy" src="https://cdn.shopify.com/s/files/1/0208/7161/0468/files/bar1brandyubicookiesandcreamproteinbar_272bbaa2-3b25-449a-909f-15db83deaa8c.png?v=1779812460" alt="YuBi Cookies &amp; Cream Protein Bar"></div>
+        <div class="snack-body">
+          <span class="snack-name">YuBi Cookies &amp; Cream Protein Bar</span>
+          <span class="snack-brand">Bar1 Brands</span>
+          <span class="snack-price">$2.41</span>
+        </div>
+      </a>
+      <a class="snack" href="https://airfaresnacks.com/products/banana-bread-superfood-cookie-1" target="_blank" rel="noopener">
+        <div class="thumb"><img loading="lazy" src="https://cdn.shopify.com/s/files/1/0208/7161/0468/files/Z9jvxTiBA97Gikyz_loveandchewbananabreadsuperfoodcookie.png?v=1774841707" alt="Banana Bread Superfood Cookie"></div>
+        <div class="snack-body">
+          <span class="snack-name">Banana Bread Superfood Cookie</span>
+          <span class="snack-brand">Love + Chew</span>
+          <span class="snack-price">$2.42</span>
+        </div>
+      </a>
+      <a class="snack" href="https://airfaresnacks.com/products/crispy-reds-apple-chips" target="_blank" rel="noopener">
+        <div class="thumb"><img loading="lazy" src="https://cdn.shopify.com/s/files/1/0208/7161/0468/files/Baked.png?v=1774835578" alt="Crispy Reds Apple Chips"></div>
+        <div class="snack-body">
+          <span class="snack-name">Crispy Reds Apple Chips</span>
+          <span class="snack-brand">Bare Snacks</span>
+          <span class="snack-price">$2.44</span>
+        </div>
+      </a>
+      <a class="snack" href="https://airfaresnacks.com/products/peanut-butter-cookie-bar-1" target="_blank" rel="noopener">
+        <div class="thumb"><img loading="lazy" src="https://cdn.shopify.com/s/files/1/0208/7161/0468/files/163ab1b0-3bf0-4d49-a9b8-42964a69ab50_larabar_peanut_butter_cookie_bar.png?v=1774835568" alt="Peanut Butter Cookie Bar"></div>
+        <div class="snack-body">
+          <span class="snack-name">Peanut Butter Cookie Bar</span>
+          <span class="snack-brand">Larabar</span>
+          <span class="snack-price">$2.46</span>
+        </div>
+      </a>
+      <a class="snack" href="https://airfaresnacks.com/products/sea-salt-sweet-potato-chips" target="_blank" rel="noopener">
+        <div class="thumb"><img loading="lazy" src="https://cdn.shopify.com/s/files/1/0208/7161/0468/files/SeaSaltSweetPotatoChips_4307b9fb-1f8a-483c-884c-81a76b8bade1.png?v=1774841067" alt="Sea Salt Sweet Potato Chips"></div>
+        <div class="snack-body">
+          <span class="snack-name">Sea Salt Sweet Potato Chips</span>
+          <span class="snack-brand">Jackson&#x27;s Food Company</span>
+          <span class="snack-price">$2.50</span>
+        </div>
+      </a>
+      <a class="snack" href="https://airfaresnacks.com/products/bear-bar-1" target="_blank" rel="noopener">
+        <div class="thumb"><img loading="lazy" src="https://cdn.shopify.com/s/files/1/0208/7161/0468/files/Bear_bar_ab0aae65-054d-4aae-ac98-cff76893330c.png?v=1782746847" alt="Bear Bar"></div>
+        <div class="snack-body">
+          <span class="snack-name">Bear Bar</span>
+          <span class="snack-brand">Bear Bar</span>
+          <span class="snack-price">$2.55</span>
+        </div>
+      </a>
+      <a class="snack" href="https://airfaresnacks.com/products/sea-salt-chickpea-snack" target="_blank" rel="noopener">
+        <div class="thumb"><img loading="lazy" src="https://cdn.shopify.com/s/files/1/0208/7161/0468/files/Chickpeas.png?v=1783086630" alt="Sea Salt Chickpea Snack"></div>
+        <div class="snack-body">
+          <span class="snack-name">Sea Salt Chickpea Snack</span>
+          <span class="snack-brand">Biena Snacks</span>
+          <span class="snack-price">$2.56</span>
+        </div>
+      </a>
+      <a class="snack" href="https://airfaresnacks.com/products/unsalted-almond-butter-packet-1" target="_blank" rel="noopener">
+        <div class="thumb"><img loading="lazy" src="https://cdn.shopify.com/s/files/1/0208/7161/0468/files/Unsaltedalmond.png?v=1781017996" alt="Unsalted Almond Butter Packet"></div>
+        <div class="snack-body">
+          <span class="snack-name">Unsalted Almond Butter Packet</span>
+          <span class="snack-brand">Spread The Love</span>
+          <span class="snack-price">$2.65</span>
+        </div>
+      </a>
+      <a class="snack" href="https://airfaresnacks.com/products/cheese-less-snack-thins-1" target="_blank" rel="noopener">
+        <div class="thumb"><img loading="lazy" src="https://cdn.shopify.com/s/files/1/0208/7161/0468/files/aCVRcSdWJ-7kSIcG_everybodyeatcheese-lesssnackthins.png?v=1774835550" alt="Cheese-Less Snack Thins"></div>
+        <div class="snack-body">
+          <span class="snack-name">Cheese-Less Snack Thins</span>
+          <span class="snack-brand">Every Body Eat</span>
+          <span class="snack-price">$2.88</span>
+        </div>
+      </a>
+      <a class="snack" href="https://airfaresnacks.com/products/lil-bit-spicy-grain-free-pretzels" target="_blank" rel="noopener">
+        <div class="thumb"><img loading="lazy" src="https://cdn.shopify.com/s/files/1/0208/7161/0468/files/savorbysuzielilbitspicygrainfreepretzels_1ef446c6-d214-4205-9fa1-a2a75b764722.png?v=1774841059" alt="Lil&#x27; Bit Spicy Grain-Free Pretzels"></div>
+        <div class="snack-body">
+          <span class="snack-name">Lil&#x27; Bit Spicy Grain-Free Pretzels</span>
+          <span class="snack-brand">Savor by Suzie</span>
+          <span class="snack-price">$2.90</span>
+        </div>
+      </a>
+      <a class="snack" href="https://airfaresnacks.com/products/oat-milk-vanilla-latte-nitro-cold-brew" target="_blank" rel="noopener">
+        <div class="thumb"><img loading="lazy" src="https://cdn.shopify.com/s/files/1/0208/7161/0468/files/risevanillaoatmilklattenitrocoldbrewcoffee.png?v=1774835716" alt="Oat Milk Vanilla Latte Nitro Cold Brew"></div>
+        <div class="snack-body">
+          <span class="snack-name">Oat Milk Vanilla Latte Nitro Cold Brew</span>
+          <span class="snack-brand">RISE Brewing</span>
+          <span class="snack-price">$2.94</span>
+        </div>
+      </a>
+    </div>
+
+    <div class="bundle">
+      <div class="bundle-copy">
+        <h3>Build a 50 snack Tester from these picks</h3>
+        <p>Our standard 50 snack Tester runs $199, about $3.98 a snack. Fill the same Tester with these value picks instead, averaging $2.45 a snack, and a one time order is about $123. Put it on a subscription and you save another 15%, so about $104. Same 50 snacks, built for a team of 10. Cancel anytime.</p>
+      </div>
+      <div class="bundle-price">
+        <div class="was">standard Tester $199</div>
+        <div class="tier"><span class="tier-label">one time</span><span class="now">$123</span></div>
+        <div class="tier"><span class="tier-label">subscription</span><span class="now sub">$104</span><span class="save-pill">save 15% more</span></div>
+        <div class="per">from $3.98 a snack down to about $2.09 on subscription</div>
+      </div>
+    </div>
+
+    <div class="offer" style="margin-top:40px;background:var(--green);color:#fff;border-radius:22px;padding:28px 30px;display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:space-between">
+      <div style="flex:1 1 320px">
+        <h3 style="font-size:20px;letter-spacing:-.01em;margin-bottom:6px">Your first order, 15% off.</h3>
+        <p style="font-size:14.5px;opacity:.9">Use the code at checkout on anything on the site, value picks included. That puts these snacks in Costco territory.</p>
+      </div>
+      <div style="flex:0 0 auto;text-align:center">
+        <div style="background:#fff;color:var(--green);font-weight:800;font-size:22px;letter-spacing:.08em;border-radius:14px;padding:12px 26px;margin-bottom:10px">WELCOME15</div>
+        <a class="btn" style="background:var(--mint);color:var(--green-dark)" href="https://airfaresnacks.com/snacks" target="_blank" rel="noopener">Shop with 15% off</a>
+      </div>
+    </div>
+
+    <div class="cta-row">
+      <a class="btn" href="https://airfaresnacks.com/snacks" target="_blank" rel="noopener">Browse the marketplace</a>
+      <a class="btn btn-ghost" href="mailto:hello@airfaresnacks.com?subject=My%20value%20Tester&body=I'd%20like%20a%2050%20snack%20Tester%20built%20from%20your%20value%20picks%20for%20about%20%24123%20one%20time%20or%20%24104%20on%20subscription.%20Here%20is%20my%20office%20address%3A">Or email us to build your value Tester</a>
+    </div>
+    <p class="note">When your team grows past 10 and you are ready to try a free box, just reply to our email. We will be here.</p>
+
+    <div class="footer">airfare · healthy snacks for offices · hello@airfaresnacks.com</div>
+  </div>
+</body>
+</html>

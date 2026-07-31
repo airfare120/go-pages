@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>When your contract opens up | airfare</title>
+<style>
+  :root{
+    --green:#256e57; --green-dark:#1e5a47; --green-tint:#eef5f1;
+    --sage:#a8c5bc; --mint:#d3f7d3; --cream:#f9f8f5;
+    --ink:#0f1724; --muted:#6b7280; --line:#e7e4dc;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",ui-sans-serif,system-ui,sans-serif;
+    background:var(--cream); color:var(--ink);
+    min-height:100vh; display:flex; align-items:center; justify-content:center;
+    padding:32px 20px; line-height:1.55;
+    background-image:radial-gradient(1200px 500px at 50% -10%, #ecf5f0 0%, rgba(236,245,240,0) 60%);
+  }
+  .card{
+    width:100%; max-width:580px; background:#fff; border:1px solid var(--line);
+    border-radius:28px; padding:44px 40px 34px;
+    box-shadow:0 24px 60px -30px rgba(15,23,36,.28);
+    animation:rise .6s cubic-bezier(.16,1,.3,1) both;
+  }
+  @keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+  .brand{display:flex;align-items:center;gap:7px;margin-bottom:24px}
+  .brand b{font-size:20px;font-weight:800;letter-spacing:-.02em;color:var(--green)}
+  .brand svg{color:var(--green)}
+  .eyebrow{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--green);background:var(--green-tint);
+    border-radius:999px;padding:6px 13px;margin-bottom:18px}
+  h1{font-size:29px;line-height:1.15;letter-spacing:-.02em;margin-bottom:14px}
+  .lead{color:var(--muted);font-size:16px;margin-bottom:22px}
+  .lead b{color:var(--ink)}
+  .steps{list-style:none;display:grid;gap:14px;margin:24px 0 8px}
+  .steps li{display:flex;gap:14px;align-items:flex-start}
+  .dot{flex:0 0 auto;width:30px;height:30px;border-radius:50%;background:var(--green-tint);
+    color:var(--green);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px}
+  .steps b{display:block;font-size:15px}
+  .steps span{color:var(--muted);font-size:14px}
+  .note{background:var(--green-tint);border-radius:16px;padding:18px 20px;font-size:14.5px;color:#245a4a;margin-top:6px}
+  .note b{color:var(--green-dark)}
+  .cta-row{margin-top:26px;display:flex;flex-wrap:wrap;gap:12px}
+  .btn{display:inline-block;background:var(--green);color:#fff;text-decoration:none;font-weight:700;
+    font-size:15px;padding:14px 26px;border-radius:999px;transition:transform .12s,background .12s}
+  .btn:hover{background:var(--green-dark);transform:translateY(-1px)}
+  .btn-ghost{background:transparent;color:var(--green);border:1.5px solid var(--sage)}
+  .btn-ghost:hover{background:var(--green-tint);color:var(--green-dark)}
+  .footer{margin-top:30px;padding-top:20px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+</style>
+</head>
+<body>
+  <main class="card">
+    <div class="brand">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg>
+      <b>airfare</b>
+    </div>
+
+    <span class="eyebrow">Good fit, timing's just off</span>
+    <h1>Sounds like you're locked in for now.</h1>
+    <p class="lead">Totally normal. Plenty of our best customers came from a big all in one provider once their contract opened up. We are happy to wait for the right moment rather than talk you into a mess.</p>
+
+    <ul class="steps">
+      <li><span class="dot">1</span><div><b>We noted your renewal window</b><span>From what you shared on the form, we know roughly when you can look around again.</span></div></li>
+      <li><span class="dot">2</span><div><b>We reach out before it opens</b><span>About 60 days ahead of your renewal, so you have real time to compare.</span></div></li>
+      <li><span class="dot">3</span><div><b>You taste before you switch</b><span>A free sample box lands first. No commitment until your team actually loves the snacks.</span></div></li>
+    </ul>
+
+    <div class="note">
+      <b>Can you add a second vendor?</b> A lot of contracts are not exclusive on snacks. If you are allowed to bring in a healthy complement now, just reply to our email and we will set you up alongside your main provider.
+    </div>
+
+    <p style="margin:22px 0 10px;font-size:14px;color:var(--muted);font-weight:600">In the meantime, hear it from offices already on board:</p>
+    <div class="reel" style="position:relative;padding-top:56.25%;border-radius:18px;overflow:hidden;border:1px solid var(--line)">
+      <iframe src="https://player.vimeo.com/video/1192090989" style="position:absolute;top:0;left:0;width:100%;height:100%;border:0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="airfare customer testimonials"></iframe>
+    </div>
+
+    <div class="cta-row">
+      <a class="btn" href="https://airfaresnacks.com/snacks" target="_blank" rel="noopener">See what you'll be tasting</a>
+      <a class="btn btn-ghost" href="mailto:hello@airfaresnacks.com?subject=We%20can%20add%20a%20complement">We can add a complement now</a>
+    </div>
+
+    <div class="footer">airfare · healthy snacks for offices · hello@airfaresnacks.com</div>
+  </main>
+</body>
+</html>
